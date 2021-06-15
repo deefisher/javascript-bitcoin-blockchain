@@ -17,7 +17,7 @@ class Block {
     }
 
     static genesis() {
-        return new this('Genisis time', '-----', 'f1r57-h45h', []);
+        return new this('Genesis time', '-----', 'f1r57-h45h', []);
     }
 
     static mineBlock(lastBlock, data) {
