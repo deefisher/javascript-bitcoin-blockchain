@@ -38,7 +38,7 @@ class Wallet {
 
     static blockchainWallet() {
         const blockchainWallet = new this();
-        blockchainWallet.addrress = 'blockchain-wallet';
+        blockchainWallet.address = 'blockchain-wallet';
         return blockchainWallet;
     }
 }
