@@ -10,10 +10,18 @@ class Miner {
     }
 
     mine() {
+        //-----------------------------------------------------------------------------------
+        //a. This could be done on a blockchain wallet approval self dedicated server
         const validTransactions = this.transactionPool.validTransactions();
         validTransactions.push(Transaction.rewardTransaction(this.wallet, Wallet.blockchainWallet()));
+        //-----------------------------------------------------------------------------------
 
+        //-----------------------------------------------------------------------------------
+        //b. this could be replaced to just be the `mineBlock` function executed before step a. mentioned
+        //above. The server mentioned above would then run addBlock and then carry out the reward transaction
         const block = this.blockchain.addBlock(validTransactions);
+        //-----------------------------------------------------------------------------------
+
         this.p2pServer.syncChains();
         this.transactionPool.clear();
         this.p2pServer.broadcastClearTransactions();

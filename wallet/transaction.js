@@ -1,4 +1,4 @@
-const ChainUtil = require('../chain-util');
+ const ChainUtil = require('../chain-util');
 const { MINING_REWARD } = require('../config');
 
 class Transaction {
@@ -37,7 +37,7 @@ class Transaction {
         }
 
         return Transaction.transactionWithOutputs(senderWallet, [
-            { amount: senderWallet.balance - amount, address: senderWallet.publicKey },
+            { amount: senderWallet.balance - amount, address: senderWallet.publicKey }, //this is an output that is the new balance
             { amount, address: recipient },
         ]);
     }
